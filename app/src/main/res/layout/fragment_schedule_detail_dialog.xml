@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ScheduleDetailDialogFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        <Toolbar
+            android:id="@+id/toolbarConference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/platzi_conf_2"
+                        android:scaleType="centerCrop"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:alpha="0.5"/>
+                    <TextView
+                        android:id="@+id/rvItemScheduleHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título de la conferencia"
+                        android:textSize="@dimen/itemScheduleTitle"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/cardCornerRadius"
+                    app:cardElevation="5dp"
+                    android:layout_margin="@dimen/itemScheduleSubtitle2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/rvDetailConferenceHour"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00:00"
+                            android:gravity="center_horizontal"
+                            android:textSize="@dimen/itemScheduleSubtitle2"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+                        <TextView
+                            android:id="@+id/rvDetailConferenceSpeaker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Expositor name"
+                            android:gravity="center_horizontal"
+                            android:textSize="@dimen/itemScheduleSubtitle"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+                        <TextView
+                            android:id="@+id/rvDetailConferenceTag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tag"
+                            android:gravity="center_horizontal"
+                            android:textSize="@dimen/itemScheduleSubtitle2"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+                        <TextView
+                            android:id="@+id/rvDetailConferenceDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Conference details"
+                            android:gravity="center_horizontal"
+                            android:textSize="@dimen/itemScheduleSubtitle2"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_margin="5dp"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
