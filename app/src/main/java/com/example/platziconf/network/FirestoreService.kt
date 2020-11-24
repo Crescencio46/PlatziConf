@@ -14,7 +14,7 @@ class FirestoreService {
     }
 
     fun getSpeakers(callback: Callback<List<Speaker>>){
-        firebaseFirestore.collection("speakers")
+            firebaseFirestore.collection("speakers")
             .orderBy("category")
             .get()
             .addOnSuccessListener { result ->
@@ -26,7 +26,7 @@ class FirestoreService {
             }
     }
 
-    fun getSchedule(callback: Callback<List<Conference>>){
+    fun getSchedule(callback: Callback<List<android.telecom.Conference>>){
         firebaseFirestore.collection("conferences")
             .get()
             .addOnSuccessListener { result ->
